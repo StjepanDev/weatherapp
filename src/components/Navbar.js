@@ -2,12 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import nav from '../css/Navbar.css';
 
-export default function Navbar() {
+function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-light navbar-expand-md">
         <Container>
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/#">
             Dhmz
           </a>
           <button
@@ -21,12 +21,12 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navcol-1">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a className="nav-link" href="/#">
                   First Item
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/#">
                   Second Item
                 </a>
               </li>
@@ -38,3 +38,5 @@ export default function Navbar() {
     </div>
   );
 }
+
+export default Navbar;

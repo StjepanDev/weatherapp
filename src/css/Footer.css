@@ -1,0 +1,8 @@
+.footer-dark {
+  background: rgb(190, 198, 227);
+  color: rgb(103, 152, 233);
+}
+.footer-dark h3 {
+  color: rgb(103, 152, 233);
+  bordercolor: rgb(103, 152, 233);
+}
