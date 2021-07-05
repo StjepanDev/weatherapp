@@ -2,6 +2,11 @@ import React from 'react';
 import Input from './Input';
 import Card from './Card';
 
+import { ReactComponent as Munja } from './MunjaOblak.svg';
+import { ReactComponent as Oblak } from './OblakKisa.svg';
+import { ReactComponent as SunOblak } from './SunOblak.svg';
+import { ReactComponent as Sun } from './Sun.svg';
+
 function Container() {
   return (
     <div className="container">
@@ -13,19 +18,19 @@ function Container() {
           <Card />
         </div>
       </div>
-      <img className="img-fluid" src="assets/img/36.jpg" />
+      <img className="img-fluid" src="images/36.jpg" alt="nice clouds" />
       <div className="row">
         <div className="col-md-3">
-          <img src="assets/img/munja%20oblak.svg" />
+          <Munja alt="lightning storm" />
         </div>
         <div className="col-md-3">
-          <img src="assets/img/oblak%20kisa%203.svg" />
+          <Oblak alt="rainy clouds" />
         </div>
         <div className="col-md-3">
-          <img src="assets/img/oblak%20sun.svg" />
+          <SunOblak alt="sunny clouds" />
         </div>
         <div className="col-md-3">
-          <img src="assets/img/sunce.svg" />
+          <Sun alt="sunny" />
         </div>
       </div>
     </div>
