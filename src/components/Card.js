@@ -1,16 +1,16 @@
 import React from 'react';
 
-function Card() {
+function Card({ city, temp }) {
+  const { data } = city;
   return (
     <div className="card-group">
       <div className="card">
         <img className="card-img-top w-100 d-block" />
         <div className="card-body">
-          <h4 className="card-title">Title</h4>
+          <h1 className="card-title">{data[0].city}</h1>
+          <p className="card-text">{data[0].admin_name}</p>
           <p className="card-text">
-            Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo
-            odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non
-            mi porta gravida at eget metus.
+            {temp[0].data.timelines[0].intervals[0].startTime}
           </p>
           <button
             className="btn btn-primary"
@@ -20,7 +20,7 @@ function Card() {
               color: 'rgb(241,231,7)',
             }}
           >
-            Button
+            {temp[0].data.timelines[0].intervals[0].values.temperature}
           </button>
         </div>
       </div>

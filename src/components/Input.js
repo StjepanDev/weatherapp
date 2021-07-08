@@ -20,7 +20,6 @@ function Input({ handleSubmit, handleInputChange }) {
           type="text"
           onChange={handleInputChange}
           placeholder="Search City"
-          // value={searchTerm}
         />
         <div className="input-group-append">
           <button

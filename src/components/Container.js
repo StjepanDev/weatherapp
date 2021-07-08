@@ -2,7 +2,7 @@ import React from 'react';
 import Input from './Input';
 import Card from './Card';
 
-function Container({ handleSubmit, handleInputChange }) {
+function Container({ handleSubmit, handleInputChange, city, temp }) {
   return (
     <div className="container">
       <div className="row">
@@ -13,7 +13,7 @@ function Container({ handleSubmit, handleInputChange }) {
           />
         </div>
         <div className="col order-2">
-          <Card />
+          <Card city={city} temp={temp} />
         </div>
       </div>
       <img className="img-fluid" src="images/36.jpg" alt="nice clouds" />

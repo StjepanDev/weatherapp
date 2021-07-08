@@ -14,44 +14,40 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addCity();
-    getData();
   };
 
   const addCity = () => {
-    getGradovi();
-  };
-
-  const getGradovi = async () => {
-    const url = 'http://localhost:3000/gradovi';
-
-    const res = await fetch(`${url}?city=${searchTerm}`, {
-      method: 'GET',
-    });
-    const data = await res.json();
-    setCity({ ...city, ...data[0] });
+    getGradovi(searchTerm);
   };
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const { lat, lng } = city;
-  const getData = async () => {
+  const getGradovi = async () => {
+    const url = 'http://localhost:3000/gradovi';
+    const res = await fetch(`${url}?city=${searchTerm}`, {
+      method: 'GET',
+    });
+    const data = await res.json();
+    const lat = data[0].lat;
+    const lng = data[0].lng;
     const response = await fetch(
       `https://api.tomorrow.io/v4/timelines?location=${lat},${lng}&fields=temperature&timesteps=1h&units=metric&apikey=${API_KEY}`
     );
-    const data = await response.json();
-    const { timelines } = data.data;
-    setTemp(timelines.intervals);
-    console.log(temp);
-  };
+    const data2 = await response.json();
 
+    setCity({ data });
+    setTemp([data2]);
+  };
   return (
     <div>
       <Navbar />
       <Container
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}
+        city={city}
+        temp={temp}
       />
       <Footer />
     </div>
