@@ -1,37 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-function Input() {
-  // const [cities, setCities] = useState([]);
-  const [searchTerm, setSearchTerm] = useState([]);
-  const [coords, setCoords] = useState('');
-
-  useEffect(() => {
-    getGradovi();
-  }, []);
-
-  const getGradovi = async (searchTerm) => {
-    const url = 'http://localhost:3000/gradovi';
-
-    const res = await fetch(`${url}?city=${searchTerm}`, {
-      method: 'GET',
-    });
-    let data = await res.json();
-    // console.log(data);
-    setSearchTerm(data);
-    setCoords(data.lat);
-  };
-  // console.log(cities, searchTerm);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    getGradovi(searchTerm);
-  };
-
-  const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-  console.log(searchTerm.lat);
-  const { lat, lng } = searchTerm;
+function Input({ handleSubmit, handleInputChange }) {
   return (
     <div className="input-group flex-row align-content-center">
       <div className="input-group-prepend">
@@ -42,7 +11,6 @@ function Input() {
             color: 'rgb(241,231,7)',
           }}
         >
-          <h1></h1>
           Search City
         </span>
       </div>
@@ -52,7 +20,7 @@ function Input() {
           type="text"
           onChange={handleInputChange}
           placeholder="Search City"
-          value={searchTerm.city}
+          // value={searchTerm}
         />
         <div className="input-group-append">
           <button

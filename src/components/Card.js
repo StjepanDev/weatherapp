@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function Card() {
-  const [temperature, setTemperature] = useState([]);
-
   return (
     <div className="card-group">
       <div className="card">

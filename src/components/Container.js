@@ -2,12 +2,15 @@ import React from 'react';
 import Input from './Input';
 import Card from './Card';
 
-function Container() {
+function Container({ handleSubmit, handleInputChange }) {
   return (
     <div className="container">
       <div className="row">
         <div className="col-sm-6 col-md-6 d-lg-flex align-items-lg-center">
-          <Input />
+          <Input
+            handleInputChange={handleInputChange}
+            handleSubmit={handleSubmit}
+          />
         </div>
         <div className="col order-2">
           <Card />
